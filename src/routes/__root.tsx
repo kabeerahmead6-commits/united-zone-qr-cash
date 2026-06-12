@@ -84,6 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "UnitedZone — Branch QR Manager" },
+      { name: "twitter:description", content: "Manage UPI QR codes across all your branches from one admin dashboard." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/zZx8VS6yJKWdWwMVGFqT1n7Vjp12/social-images/social-1781266226813-green_20251010_144141_0000.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/zZx8VS6yJKWdWwMVGFqT1n7Vjp12/social-images/social-1781266226813-green_20251010_144141_0000.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
