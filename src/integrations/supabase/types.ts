@@ -14,7 +14,104 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
+      sales: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          note: string | null
+          occurred_at: string
+          store_id: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: string
+          note?: string | null
+          occurred_at?: string
+          store_id: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          note?: string | null
+          occurred_at?: string
+          store_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sales_store_id_fkey"
+            columns: ["store_id"]
+            isOneToOne: false
+            referencedRelation: "stores"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      stores: {
+        Row: {
+          active: boolean
+          created_at: string
+          design: Json
+          holder_name: string | null
+          id: string
+          name: string
+          phone: string | null
+          photo_url: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          design?: Json
+          holder_name?: string | null
+          id?: string
+          name: string
+          phone?: string | null
+          photo_url?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          design?: Json
+          holder_name?: string | null
+          id?: string
+          name?: string
+          phone?: string | null
+          photo_url?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
